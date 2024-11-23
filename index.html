@@ -1,1 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funny Dog Facts</title>
+    <style>
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            background-color: #ffd6e0;
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            background-color: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            max-width: 600px;
+            width: 90%;
+            text-align: center;
+        }
+
+        h1 {
+            color: #ff6b6b;
+            margin-bottom: 20px;
+        }
+
+        #fact-display {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            font-size: 18px;
+            min-height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        button {
+            background-color: #ff6b6b;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        button:hover {
+            transform: scale(1.05);
+        }
+
+        .dog-emoji {
+            font-size: 50px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="dog-emoji">🐕</div>
+        <h1>Hilarious Dog Facts!</h1>
+        <div id="fact-display">Click for a funny dog fact! 🐾</div>
+        <button onclick="generateFact()">Make Me Laugh! 🐶</button>
+    </div>
+
+    <script>
+        const dogFacts = [
+            "Dogs chase their tails because they're convinced it's the ultimate game of tag with themselves! 🌪️",
+            "When dogs tilt their heads, they're not just being cute - they're trying to figure out if you're speaking their language or just making funny human noises! 🤔",
+            "Dogs hide their treats and forget where they put them, then blame the cat for stealing them! 😅",
+            "When dogs zoom around the house like crazy, they're actually practicing for their secret dog Olympics! 🏃‍♂️",
+            "Dogs think their reflection is another dog who copies them perfectly - what a talented friend! 🪞",
+            "Dogs believe the vacuum cleaner is their arch-nemesis and must be barked at to protect the household! 🦸‍♂️",
+            "When dogs stick their heads out of car windows, they're actually pretending to be superheroes! 🚗",
+            "Dogs think they're invisible when they close their eyes during hide and seek! 👀",
+            "When dogs snore, they're actually practicing their opera singing in their dreams! 🎭",
+            "Dogs believe squirrels are secret agents sent to spy on them! 🐿️",
+            "Dogs think the mailman comes every day just to play chase with them! 📮",
+            "When dogs roll in grass, they think they're giving themselves a luxury spa treatment! 🌿",
+            "Dogs believe their thunder barks actually scare the storms away! ⛈️",
+            "When dogs dig holes in the yard, they think they're creating a swimming pool! 🏊‍♂️",
+            "Dogs think the doorbell is a personal announcement of their importance! 🔔"
+        ];
+
+        function generateFact() {
+            const factDisplay = document.getElementById('fact-display');
+            const randomIndex = Math.floor(Math.random() * dogFacts.length);
+            factDisplay.textContent = dogFacts[randomIndex];
+            
+            // Add a little bounce animation to the emoji
+            const emoji = document.querySelector('.dog-emoji');
+            emoji.style.animation = 'bounce 0.5s';
+            setTimeout(() => {
+                emoji.style.animation = '';
+            }, 500);
+        }
+    </script>
+</body>
+</html>
 
